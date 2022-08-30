@@ -1,0 +1,30 @@
+ul {
+    list-style-type:none;
+}
+
+p {
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #ddd;
+  }
+  
+ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+  
+ul li:last-child {
+    border-bottom: none
+}
+
+.container {
+    padding: 3em 20em;
+}
+
+ul button {
+    float:right;
+}

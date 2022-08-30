@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hi <%= name %></h1>
+        <h1 id="head">To-Do list</h1>
+        <form id="form" action="/" method="post">
+            <label for="inputfield">New Thing Todo</label>
+            <input type="text" id="inputfield" name="inputfield" placeholder="Reading" required>
+            <button id="additem" type="submit">add</button>
+        </form>
+    </div>
+    <div class="container">
+            <ul id="todoholder">
+                <% for(let i = 0; i < newListItem.length; i++){ %>
+                    <form action="/delete" method="post">
+                        <li> <input type="checkbox" name="checkbox" value="<%= newListItem[i]._id%>" onchange="this.form.submit()" id="checkbox">
+                            <%= newListItem[i].name %>
+                        </li> 
+                    </form>
+                <% } %>
+            </ul>
+    </div>
+    <div class="container">
+        <form action="/reset" method="post">
+            <button>reset</button>
+        </form>
+    </div>
+    <!-- <div class="container">
+        <form action="/" method="post">
+            <button name="reset" value="clean">reset</button>
+        </form>
+    </div>     -->
+    <script src="app.js"></script>
+</body>
+</html>
